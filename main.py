@@ -1,11 +1,12 @@
 import asyncio
 import aiohttp
+import os
 from aiogram import Bot, Dispatcher
 from aiogram.types import Message
 from aiogram.filters import Command
 from aiogram.utils.keyboard import ReplyKeyboardBuilder
 
-API_TOKEN = "8545995350:AAFz8UBHDH-IsR75iSHzeUbqqIRrGgBxGyY"
+API_TOKEN = os.environ.get("API_TOKEN")
 
 
 bot = Bot(API_TOKEN)
