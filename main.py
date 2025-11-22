@@ -32,7 +32,7 @@ def handle_message(message):
             data = resp.json()
             usd_rate = None
             for item in data:
-                if item.get("currencyCodeA") == 840:  # USD
+                if isinstance(item, dict) and item.get("currencyCodeA") == 840:
                     usd_rate = f"Курс USD: {item.get('rateBuy')} / {item.get('rateSell')}"
                     break
             if usd_rate:
